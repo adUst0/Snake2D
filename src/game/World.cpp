@@ -1,6 +1,6 @@
 // Local includes
 #include "World.h"
-#include "GameOverState.h"
+#include "states/GameOverState.h"
 #include "engine/Game.h"
 #include "WorldTypes.h"
 
@@ -19,6 +19,7 @@ World::World()
 
 	m_snake.setColors(SNAKE_BODY_COLOR, SNAKE_HEAD_COLOR);
 	m_snake.setMoveTimeSeconds(SNAKE_MOVE_TIME_SECONDS);
+	m_snake.setMoveTimeSecondsCap(SNAKE_MOVE_TIME_SECONDS_CAP);
 	m_snake.setSpeedModifierPercentPerApple(SNAKE_SPEED_MODIFIER_PERCENT_PER_APPLE);
 
 	moveAppleToRandomFreePosition();

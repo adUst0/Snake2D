@@ -3,13 +3,14 @@
 // Local includes
 #include "engine/StateMachine.h"
 #include "engine/Text.h"
-#include "World.h"
+#include "../World.h"
+#include "SnakeBaseState.h"
 
 // SDL includes
 
 // std includes
 
-class GameSate : public BaseState
+class GameSate : public SnakeBaseState
 {
 public:
 	GameSate(StateMachine& stateMachine);
@@ -30,8 +31,6 @@ private:
 
 	Text							m_pauseText;
 	bool							m_isPaused = false;
-	
-	Sprite							m_background;
 
 	World							m_world;
 

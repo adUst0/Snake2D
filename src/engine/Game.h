@@ -23,9 +23,11 @@ public:
 	~Game();
 
 	SDL_Renderer*					getRenderer() { return m_renderer; }
-	AssetManager&					getAssetManager() { return m_textureManager; }
+	AssetManager&					getAssetManager() { return m_assetManager; }
 	StateMachine&					getStateMachine() { return m_stateMachine; }
 	SDL_Point						getWindowSize() const;
+
+	TTF_Font*						getDefaultFont(int ptsize);
 
 	void							run();
 
@@ -38,7 +40,7 @@ private:
 	SDL_Window*						m_window = nullptr;
 	SDL_Renderer*					m_renderer = nullptr;
 
-	AssetManager					m_textureManager;
+	AssetManager					m_assetManager;
 	StateMachine					m_stateMachine;
 
 	bool							m_quit = false;

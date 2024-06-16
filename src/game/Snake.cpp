@@ -94,7 +94,8 @@ void Snake::advanceSnakePosition()
 		if (hitApple)
 		{
 			m_world->moveAppleToRandomFreePosition();
-			m_moveTimeSeconds *= (1.f - m_speedModifierPercentPerApple);
+			const float newMoveTime = m_moveTimeSeconds * (1.f - m_speedModifierPercentPerApple);
+			m_moveTimeSeconds = std::max(newMoveTime, m_moveTimeSecondsCap);
 		}
 		else
 		{

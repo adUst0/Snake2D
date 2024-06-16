@@ -1,6 +1,6 @@
 // Local includes
 #include "Game.h"
-#include "game/SplashState.h"
+#include "game/states/SplashState.h"
 
 // SDL includes
 #include <SDL.h>
@@ -45,6 +45,12 @@ SDL_Point Game::getWindowSize() const
 	SDL_Point point;
 	SDL_GetWindowSize(m_window, &point.x, &point.y);
 	return point;
+}
+
+TTF_Font* Game::getDefaultFont(int ptsize)
+{
+	m_assetManager.addFont("default", "assets/highland-gothic/HighlandGothicFLF.ttf", ptsize);
+	return m_assetManager.getFont("default", ptsize);
 }
 
 void Game::run()

@@ -30,7 +30,7 @@
     <ClCompile Include="src\engine\StateMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\SplashState.cpp">
+    <ClCompile Include="src\game\states\SplashState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\engine\Text.cpp">
@@ -39,7 +39,7 @@
     <ClCompile Include="src\engine\SDLInitializer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\GameSate.cpp">
+    <ClCompile Include="src\game\states\GameSate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\game\World.cpp">
@@ -48,13 +48,16 @@
     <ClCompile Include="src\game\Apple.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\GameOverState.cpp">
+    <ClCompile Include="src\game\states\GameOverState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\game\Snake.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\game\Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\states\SnakeBaseState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,7 +77,7 @@
     <ClInclude Include="src\engine\Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\SplashState.h">
+    <ClInclude Include="src\game\states\SplashState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\engine\Text.h">
@@ -83,7 +86,7 @@
     <ClInclude Include="src\engine\SDLInitializer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\GameSate.h">
+    <ClInclude Include="src\game\states\GameSate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\game\Config.h">
@@ -104,10 +107,13 @@
     <ClInclude Include="src\game\WorldTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\GameOverState.h">
+    <ClInclude Include="src\game\states\GameOverState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\game\Snake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\states\SnakeBaseState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -42,6 +42,7 @@ public:
 	void							advanceSnakePosition();
 
 	void							setMoveTimeSeconds(float moveTimeSeconds) { m_moveTimeSeconds = moveTimeSeconds; }
+	void							setMoveTimeSecondsCap(float moveTimeSecondsCap) { m_moveTimeSecondsCap = moveTimeSecondsCap; }
 	void							setSpeedModifierPercentPerApple(float speedModifierPercentPerApple) { m_speedModifierPercentPerApple = speedModifierPercentPerApple; }
 
 	int								numApplesCollected() const;
@@ -58,6 +59,7 @@ private:
 	std::deque<WorldPosition>		m_segments;
 
 	float							m_moveTimeSeconds = 0.2f;
+	float							m_moveTimeSecondsCap = 0.f; // the speed of the snake cannot drop below this value
 	float							m_speedModifierPercentPerApple = 0.1f;
 	float							m_moveTimeLeft = m_moveTimeSeconds;
 };

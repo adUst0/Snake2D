@@ -20,8 +20,9 @@ class Text
 {
 public:
 	Text() = default;
-	Text(Text&&) = default;
-	Text& operator=(Text&&) = default;
+	Text(Text&&) noexcept;
+	Text& operator=(Text&&) noexcept;
+
 	~Text();
 
 	void							initialize(const std::string& text, TTF_Font& font);
@@ -29,15 +30,23 @@ public:
 	const std::string&				getText() const { return m_text; }
 	void							setText(const std::string& text);
 
-	void							setColor(const SDL_Color& color) { m_color = color; }
+	void							setColor(const SDL_Color& color);
 
+	int								getHeight() const { return m_sprite.getHeight(); }
+	int								getWidth() const { return m_sprite.getWidth(); }
+
+	void							offsetPosition(const SDL_Point& offset);
+	const SDL_Point&				getPosition() const;
 	void							setPosition(const SDL_Point& position);
 
 	const Sprite&					getSprite() const { return m_sprite; }
 
 	virtual void					draw(SDL_Renderer& renderer) const override;
 
+	static Text						createTextCentered(const std::string& str, TTF_Font* font, const SDL_Color& color = { 0, 0, 0 });
+
 private:
+	void							move(Text&& rhs);
 	void							freeResources();
 	bool							isInitialized() const { return m_font != nullptr; }
 

@@ -4,12 +4,13 @@
 #include "engine/StateMachine.h"
 #include "engine/Sprite.h"
 #include "engine/Text.h"
+#include "SnakeBaseState.h"
 
 // SDL includes
 
 // std includes
 
-class SplashState : public BaseState
+class SplashState : public SnakeBaseState
 {
 public:
 	SplashState(StateMachine& stateMachine);
@@ -18,7 +19,6 @@ public:
 	void							draw() override;
 
 private:
-	Sprite							m_background;
 	Sprite							m_logo;
 	Text							m_text;
 };

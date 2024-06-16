@@ -155,15 +155,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\game\states\SnakeBaseState.cpp" />
     <ClCompile Include="src\game\Grid.cpp" />
     <ClCompile Include="src\game\Snake.cpp" />
-    <ClCompile Include="src\game\GameOverState.cpp" />
+    <ClCompile Include="src\game\states\GameOverState.cpp" />
     <ClCompile Include="src\game\Apple.cpp" />
     <ClCompile Include="src\engine\Game.cpp" />
-    <ClCompile Include="src\game\GameSate.cpp" />
+    <ClCompile Include="src\game\states\GameSate.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\engine\SDLInitializer.cpp" />
-    <ClCompile Include="src\game\SplashState.cpp" />
+    <ClCompile Include="src\game\states\SplashState.cpp" />
     <ClCompile Include="src\engine\Sprite.cpp" />
     <ClCompile Include="src\engine\StateMachine.cpp" />
     <ClCompile Include="src\engine\AssetManager.cpp" />
@@ -171,16 +172,17 @@
     <ClCompile Include="src\game\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\game\states\SnakeBaseState.h" />
     <ClInclude Include="src\game\Snake.h" />
-    <ClInclude Include="src\game\GameOverState.h" />
+    <ClInclude Include="src\game\states\GameOverState.h" />
     <ClInclude Include="src\game\Apple.h" />
     <ClInclude Include="src\engine\Drawable.h" />
     <ClInclude Include="src\game\Grid.h" />
     <ClInclude Include="src\game\Config.h" />
     <ClInclude Include="src\engine\Game.h" />
-    <ClInclude Include="src\game\GameSate.h" />
+    <ClInclude Include="src\game\states\GameSate.h" />
     <ClInclude Include="src\engine\SDLInitializer.h" />
-    <ClInclude Include="src\game\SplashState.h" />
+    <ClInclude Include="src\game\states\SplashState.h" />
     <ClInclude Include="src\engine\Sprite.h" />
     <ClInclude Include="src\engine\StateMachine.h" />
     <ClInclude Include="src\engine\AssetManager.h" />
