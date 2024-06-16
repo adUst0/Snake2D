@@ -25,6 +25,14 @@ GameSate::GameSate(StateMachine& stateMachine)
 	}
 
 	m_pauseText = Text::createTextCentered("PAUSED", Game::getInstance().getDefaultFont(72), { 255, 0, 0, 255 });
+
+	AssetManager& assetManager = Game::getInstance().getAssetManager();
+	assetManager.addTexture("controls", "assets/controls.jpg");
+	if (SDL_Texture* texture = assetManager.getTexture("controls"))
+	{
+		m_controls.setTexture(*texture);
+		m_controls.setPosition({ (int)m_world.getGrid().getCellPosition(GRID_ROWS - 1, GRID_COLS -1 ).x + CELL_SIZE - m_controls.getWidth(), SCREEN_Y_PADDING });
+	}
 }
 
 void GameSate::handleInput()
@@ -105,6 +113,7 @@ void GameSate::draw()
 	m_elapsedTimeText.draw(*renderer);
 	m_applesCollectedText.draw(*renderer);
 	m_pauseInfoText.draw(*renderer);
+	m_controls.draw(*renderer);
 
 	m_world.draw(*renderer);
 

@@ -32,6 +32,8 @@ private:
 	Text							m_pauseText;
 	bool							m_isPaused = false;
 
+	Sprite							m_controls;
+
 	World							m_world;
 
 	static constexpr int			S_TEXT_OFFSSET = 5;

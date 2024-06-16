@@ -2,3 +2,4 @@ title.png is generated with https://maketext.io/
 highland-gothic font is downloaded from https://www.1001freefonts.com/highland-gothic.font
 background.jpg is downloaded https://www.pexels.com/photo/gray-and-white-wallpaper-1103970/
 apple.png downloaded from https://www.iconpacks.net/free-icon/apple-3155.html
+controls.jpg downloaded from https://www.vecteezy.com/vector-art/6059930-pc-keyboard-arrow-keys-linear-vector-icon-isolated-on-white-background
