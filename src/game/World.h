@@ -4,6 +4,7 @@
 #include "Grid.h"
 #include "engine/Drawable.h"
 #include "Apple.h"
+#include "Snake.h"
 
 // SDL includes
 
@@ -18,13 +19,21 @@ public:
 
 	virtual void					draw(SDL_Renderer& renderer) const override;
 
-	auto							getGrid() { return m_grid; }
-	const auto						getGrid() const { return m_grid; }
+	void							onKeyPressed(const KeyEvent& event);
+	void							tick(float dtSeconds);
+
+	Grid&							getGrid() { return m_grid; }
+	const Grid&						getGrid() const { return m_grid; }
+
+	const Snake&					getSnake() const { return m_snake; }
 
 	void							moveAppleToRandomFreePosition();
 
+	void							notifyGameOver();
+
 private:
-	Grid<GRID_ROWS, GRID_COLS>		m_grid;
+	Grid							m_grid;
 	Apple							m_apple;
+	Snake							m_snake;
 };
 

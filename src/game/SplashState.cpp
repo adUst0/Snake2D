@@ -12,6 +12,8 @@
 SplashState::SplashState(StateMachine& stateMachine)
 	: BaseState(stateMachine)
 {
+	const auto windowsSize = Game::getInstance().getWindowSize();
+
 	AssetManager& assetManager = Game::getInstance().getAssetManager();
 
 	assetManager.addTexture("background", "assets/background.jpg");
@@ -19,8 +21,8 @@ SplashState::SplashState(StateMachine& stateMachine)
 	{
 		m_background.setTexture(*texture);
 		const SDL_Rect rect = m_background.getTextureRectangle();
-		const float scaleX = SCREEN_WIDTH / (float)rect.w;
-		const float scaleY = SCREEN_HEIGHT / (float)rect.h;
+		const float scaleX = windowsSize.x / (float)rect.w;
+		const float scaleY = windowsSize.y / (float)rect.h;
 		m_background.setScale({ scaleX, scaleY });
 	}
 
@@ -28,7 +30,6 @@ SplashState::SplashState(StateMachine& stateMachine)
 	SDL_Texture* texture = assetManager.getTexture("snake2d_title");
 	if (texture)
 	{
-		const auto windowsSize = Game::getInstance().getWindowSize();
 		m_logo.setTexture(*texture);
 		const int x = static_cast<int>(windowsSize.x / 2.f - m_logo.getTextureRectangle().w / 2.f);
 		const int y = static_cast<int>(windowsSize.y / 2.f - m_logo.getTextureRectangle().h / 2.f);

@@ -15,17 +15,26 @@ public:
 	GameSate(StateMachine& stateMachine);
 
 
-
+	void							handleInput() override;
 	virtual void					update(float dtSeconds) override;
 	void							draw() override;
 
 private:
 
-	// TODO testing. delete
 	float							m_elapsedTime = 0.f;
-	Text							m_text;
+	float							m_elapsedTimeUpdateInterval = 0.1f;
+	float							m_elapsedTimeSecondsTillNextUpdate = m_elapsedTimeUpdateInterval;
+	Text							m_elapsedTimeText;
+	Text							m_applesCollectedText;
+	Text							m_pauseInfoText;
+
+	Text							m_pauseText;
+	bool							m_isPaused = false;
+	
 	Sprite							m_background;
 
 	World							m_world;
+
+	static constexpr int			S_TEXT_OFFSSET = 5;
 };
 

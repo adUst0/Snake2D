@@ -31,11 +31,11 @@ void Apple::setWorldPosition(const WorldPosition& pos)
 {
 	if (m_worldPosition.row != -1 && m_worldPosition.col != -1)
 	{
-		m_world->getGrid().setCellType(m_worldPosition.row, m_worldPosition.col, CellType::Free);
+		m_world->getGrid().setCellStatus(m_worldPosition.row, m_worldPosition.col, CellStatus::Free);
 	}
 
 	m_worldPosition = pos;
-	m_world->getGrid().setCellType(m_worldPosition.row, m_worldPosition.col, CellType::Apple);
+	m_world->getGrid().setCellStatus(m_worldPosition.row, m_worldPosition.col, CellStatus::Apple);
 
 	const auto globalPos = m_world->getGrid().getCellPosition(m_worldPosition.row, m_worldPosition.col);
 	m_sprite.setPosition({ (int)globalPos.x, (int)globalPos.y });
