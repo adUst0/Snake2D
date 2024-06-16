@@ -1,15 +1,16 @@
 // Local includes
-#include "Game.h"
+#include "engine/Game.h"
+#include "game/Config.h"
 
 // SDL includes
 
 // std includes
-
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 600;
+#include <time.h>
 
 int main(int argc, char* args[])
 {
+	srand(static_cast<unsigned int>(time(nullptr)));
+
 	Game& game = Game::getInstance("Snake 2D", SCREEN_WIDTH, SCREEN_HEIGHT);
 	game.run();
 

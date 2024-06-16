@@ -1,6 +1,6 @@
 // Local includes
 #include "GameSate.h"
-#include "Game.h"
+#include "engine/Game.h"
 
 // SDL includes
 
@@ -15,6 +15,17 @@ GameSate::GameSate(StateMachine& stateMachine)
 	if (font)
 	{
 		m_text.initialize("Elapsed time ms: 0", *font);
+		m_text.setPosition({ SCREEN_X_PADDING, SCREEN_Y_PADDING });
+	}
+
+	assetManager.addTexture("background", "assets/background.jpg");
+	if (SDL_Texture* texture = assetManager.getTexture("background"))
+	{
+		m_background.setTexture(*texture);
+		const SDL_Rect rect = m_background.getTextureRectangle();
+		const float scaleX = SCREEN_WIDTH / (float)rect.w;
+		const float scaleY = SCREEN_HEIGHT/ (float)rect.h;
+		m_background.setScale({ scaleX, scaleY });
 	}
 }
 
@@ -31,7 +42,10 @@ void GameSate::draw()
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	SDL_RenderClear(renderer);
 
+	m_background.draw(*renderer);
 	m_text.draw(*renderer);
+
+	m_world.draw(*renderer);
 
 	SDL_RenderPresent(renderer);
 }

@@ -1,8 +1,9 @@
 #pragma once
 
 // Local includes
-#include "StateMachine.h"
-#include "Text.h"
+#include "engine/StateMachine.h"
+#include "engine/Text.h"
+#include "World.h"
 
 // SDL includes
 
@@ -23,5 +24,8 @@ private:
 	// TODO testing. delete
 	float							m_elapsedTime = 0.f;
 	Text							m_text;
+	Sprite							m_background;
+
+	World							m_world;
 };
 

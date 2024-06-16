@@ -24,6 +24,7 @@ public:
 
 	SDL_Renderer*					getRenderer() { return m_renderer; }
 	AssetManager&					getAssetManager() { return m_textureManager; }
+	StateMachine&					getStateMachine() { return m_stateMachine; }
 	SDL_Point						getWindowSize() const;
 
 	void							run();

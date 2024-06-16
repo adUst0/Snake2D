@@ -120,7 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\libs\SDL2_ttf-2.22.0\include;.\libs\SDL2_image-2.8.2\include;.\libs\SDL2-2.30.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\libs\SDL2_ttf-2.22.0\include;.\libs\SDL2_image-2.8.2\include;.\libs\SDL2-2.30.3\include;.\src%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -138,7 +138,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\libs\SDL2_ttf-2.22.0\include;.\libs\SDL2_image-2.8.2\include;.\libs\SDL2-2.30.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\libs\SDL2_ttf-2.22.0\include;.\libs\SDL2_image-2.8.2\include;.\libs\SDL2-2.30.3\include;.\src%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -151,26 +151,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\GameSate.cpp" />
+    <ClCompile Include="src\game\GameOverState.cpp" />
+    <ClCompile Include="src\game\Apple.cpp" />
+    <ClCompile Include="src\engine\Game.cpp" />
+    <ClCompile Include="src\game\GameSate.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\SDLInitializer.cpp" />
-    <ClCompile Include="src\SplashState.cpp" />
-    <ClCompile Include="src\Sprite.cpp" />
-    <ClCompile Include="src\StateMachine.cpp" />
-    <ClCompile Include="src\AssetManager.cpp" />
-    <ClCompile Include="src\Text.cpp" />
+    <ClCompile Include="src\engine\SDLInitializer.cpp" />
+    <ClCompile Include="src\game\SplashState.cpp" />
+    <ClCompile Include="src\engine\Sprite.cpp" />
+    <ClCompile Include="src\engine\StateMachine.cpp" />
+    <ClCompile Include="src\engine\AssetManager.cpp" />
+    <ClCompile Include="src\engine\Text.cpp" />
+    <ClCompile Include="src\game\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Game.h" />
-    <ClInclude Include="src\GameSate.h" />
-    <ClInclude Include="src\SDLInitializer.h" />
-    <ClInclude Include="src\SplashState.h" />
-    <ClInclude Include="src\Sprite.h" />
-    <ClInclude Include="src\StateMachine.h" />
-    <ClInclude Include="src\AssetManager.h" />
-    <ClInclude Include="src\Text.h" />
-    <ClInclude Include="src\Utils.h" />
+    <ClInclude Include="src\game\GameOverState.h" />
+    <ClInclude Include="src\game\Apple.h" />
+    <ClInclude Include="src\engine\Drawable.h" />
+    <ClInclude Include="src\game\Grid.h" />
+    <ClInclude Include="src\game\Config.h" />
+    <ClInclude Include="src\engine\Game.h" />
+    <ClInclude Include="src\game\GameSate.h" />
+    <ClInclude Include="src\engine\SDLInitializer.h" />
+    <ClInclude Include="src\game\SplashState.h" />
+    <ClInclude Include="src\engine\Sprite.h" />
+    <ClInclude Include="src\engine\StateMachine.h" />
+    <ClInclude Include="src\engine\AssetManager.h" />
+    <ClInclude Include="src\engine\Text.h" />
+    <ClInclude Include="src\engine\Utils.h" />
+    <ClInclude Include="src\game\World.h" />
+    <ClInclude Include="src\game\WorldTypes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

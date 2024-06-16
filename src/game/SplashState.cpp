@@ -1,6 +1,7 @@
 // Local includes
 #include "SplashState.h"
-#include "Game.h"
+#include "engine/Game.h"
+#include "Config.h"
 
 // SDL includes
 #include <SDL.h>
@@ -12,6 +13,17 @@ SplashState::SplashState(StateMachine& stateMachine)
 	: BaseState(stateMachine)
 {
 	AssetManager& assetManager = Game::getInstance().getAssetManager();
+
+	assetManager.addTexture("background", "assets/background.jpg");
+	if (SDL_Texture* texture = assetManager.getTexture("background"))
+	{
+		m_background.setTexture(*texture);
+		const SDL_Rect rect = m_background.getTextureRectangle();
+		const float scaleX = SCREEN_WIDTH / (float)rect.w;
+		const float scaleY = SCREEN_HEIGHT / (float)rect.h;
+		m_background.setScale({ scaleX, scaleY });
+	}
+
 	assetManager.addTexture("snake2d_title", "assets/title.png");
 	SDL_Texture* texture = assetManager.getTexture("snake2d_title");
 	if (texture)
@@ -58,10 +70,10 @@ void SplashState::draw()
 {
 	SDL_Renderer* renderer = Game::getInstance().getRenderer();
 
-	//SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
 
+	m_background.draw(*renderer);
 	m_logo.draw(*renderer);
 	m_text.draw(*renderer);
 

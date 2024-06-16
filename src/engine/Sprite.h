@@ -4,10 +4,11 @@
 
 // SDL includes
 #include <SDL.h>
+#include "Drawable.h"
 
 // std includes
 
-class Sprite
+class Sprite : public Drawable
 {
 public:
 	void							setTexture(SDL_Texture& texture);
@@ -18,7 +19,7 @@ public:
 	void							setPosition(const SDL_Point& position) { m_position = position; }
 	void							setScale(const SDL_FPoint& scale) { m_scale = scale; }
 
-	void							draw(SDL_Renderer& renderer) const;
+	virtual void					draw(SDL_Renderer& renderer) const override;
 
 private:
 	bool							m_isInitialized = false;

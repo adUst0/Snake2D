@@ -1,6 +1,6 @@
 // Local includes
 #include "Game.h"
-#include "SplashState.h"
+#include "game/SplashState.h"
 
 // SDL includes
 #include <SDL.h>

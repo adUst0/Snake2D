@@ -14,7 +14,9 @@
 struct SDL_Texture;
 struct SDL_Surface;
 
-class Text : public NonCopyable
+class Text 
+	: public NonCopyable
+	, public Drawable
 {
 public:
 	Text() = default;
@@ -33,7 +35,7 @@ public:
 
 	const Sprite&					getSprite() const { return m_sprite; }
 
-	void							draw(SDL_Renderer& renderer) const;
+	virtual void					draw(SDL_Renderer& renderer) const override;
 
 private:
 	void							freeResources();
