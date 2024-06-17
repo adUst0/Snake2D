@@ -61,12 +61,16 @@ void Game::run()
 
 	while (!m_quit)
 	{
-		m_stateMachine.processStateChanges();
-		m_stateMachine.getActiveState()->handleInput();
 		const Uint32 current = SDL_GetTicks();
 		const float dtSeconds = (current - lastUpdate) / 1000.0f;
-		m_stateMachine.getActiveState()->update(dtSeconds);
-		lastUpdate = current;
-		m_stateMachine.getActiveState()->draw();
+		if (dtSeconds > 1.f / m_maxFPS)
+		{
+			//std::cout << "fps: " << 1 / dtSeconds << std::endl;
+			m_stateMachine.processStateChanges();
+			m_stateMachine.getActiveState()->handleInput();
+			m_stateMachine.getActiveState()->update(dtSeconds);
+			lastUpdate = current;
+			m_stateMachine.getActiveState()->draw();
+		}
 	}
 }

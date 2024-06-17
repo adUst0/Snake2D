@@ -43,6 +43,8 @@ private:
 	AssetManager					m_assetManager;
 	StateMachine					m_stateMachine;
 
+	float							m_maxFPS = 60.f;
+
 	bool							m_quit = false;
 };
 
