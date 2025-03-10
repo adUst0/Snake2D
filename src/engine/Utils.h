@@ -6,6 +6,8 @@
 
 // std includes
 
+int randRanged(int min, int max);
+
 class NonCopyable
 {
 public:

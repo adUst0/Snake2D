@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\engine\Utils.cpp" />
     <ClCompile Include="src\game\states\SnakeBaseState.cpp" />
     <ClCompile Include="src\game\Grid.cpp" />
     <ClCompile Include="src\game\Snake.cpp" />
