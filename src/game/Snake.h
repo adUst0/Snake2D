@@ -47,6 +47,8 @@ public:
 
 	int								numApplesCollected() const;
 
+	void							setTeleportOnEdge(bool val) { m_shouldTeleportOnEdge = val; }
+
 private:
 	WorldPosition					calculateNextPosition() const;
 
@@ -62,5 +64,6 @@ private:
 	float							m_moveTimeSecondsCap = 0.f; // the speed of the snake cannot drop below this value
 	float							m_speedModifierPercentPerApple = 0.1f;
 	float							m_moveTimeLeft = m_moveTimeSeconds;
+	bool							m_shouldTeleportOnEdge = false;
 };
 

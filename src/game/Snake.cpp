@@ -137,5 +137,26 @@ WorldPosition Snake::calculateNextPosition() const
 		break;
 	}
 
+	if (m_shouldTeleportOnEdge)
+	{
+		if (headPosition.row >= m_world->getGrid().rows())
+		{
+			headPosition.row = 0;
+		}
+		else if (headPosition.row < 0)
+		{
+			headPosition.row = m_world->getGrid().rows() - 1;
+		}
+
+		if (headPosition.col >= m_world->getGrid().cols())
+		{
+			headPosition.col = 0;
+		}
+		else if (headPosition.col < 0)
+		{
+			headPosition.col = m_world->getGrid().cols() - 1;
+		}
+	}
+
 	return headPosition;
 }

@@ -18,6 +18,7 @@ static constexpr int SCREEN_X_PADDING = 200;
 static constexpr int SCREEN_Y_PADDING = 20;
 static constexpr int SCREEN_WIDTH = 1024;
 static constexpr int SCREEN_HEIGHT = 768;
+static constexpr bool TELEPORT_SNAKE_ON_EDGE = true;
 
 static constexpr int GRID_ROWS = 20;
 static constexpr int GRID_COLS = 20;

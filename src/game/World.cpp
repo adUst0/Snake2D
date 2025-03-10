@@ -21,6 +21,7 @@ World::World()
 	m_snake.setMoveTimeSeconds(SNAKE_MOVE_TIME_SECONDS);
 	m_snake.setMoveTimeSecondsCap(SNAKE_MOVE_TIME_SECONDS_CAP);
 	m_snake.setSpeedModifierPercentPerApple(SNAKE_SPEED_MODIFIER_PERCENT_PER_APPLE);
+	m_snake.setTeleportOnEdge(TELEPORT_SNAKE_ON_EDGE);
 
 	moveAppleToRandomFreePosition();
 }
